@@ -40,8 +40,8 @@ c.Spawner.default_url = '/lab'
 # Timeout for starting a server (in seconds)
 c.Spawner.start_timeout = 60
 
-# Each user gets their own notebook directory
-c.Spawner.notebook_dir = '~/notebooks'
+# Use the current working directory for notebooks
+c.Spawner.notebook_dir = ''
 
 # =============================================================================
 # Authenticator settings
