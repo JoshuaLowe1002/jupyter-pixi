@@ -27,9 +27,9 @@ c.JupyterHub.port = 8000
 # Spawner settings
 # =============================================================================
 
-# The class to use for spawning single-user servers
-# Default LocalProcessSpawner works for local development
-c.JupyterHub.spawner_class = 'jupyterhub.spawner.LocalProcessSpawner'
+# SimpleLocalProcessSpawner runs all user servers as the current process user
+# This works in containerized/deployed environments where system users don't exist
+c.JupyterHub.spawner_class = 'jupyterhub.spawner.SimpleLocalProcessSpawner'
 
 # The command used for starting the single-user server
 c.Spawner.cmd = ['jupyterhub-singleuser']
@@ -39,6 +39,9 @@ c.Spawner.default_url = '/lab'
 
 # Timeout for starting a server (in seconds)
 c.Spawner.start_timeout = 60
+
+# Each user gets their own notebook directory
+c.Spawner.notebook_dir = '~/notebooks'
 
 # =============================================================================
 # Authenticator settings
