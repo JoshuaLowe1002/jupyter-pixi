@@ -46,11 +46,11 @@ c.Spawner.start_timeout = 60
 
 # For local development, use the PAM authenticator (system users)
 # This authenticates against system user accounts
-c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
+# c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 
 # For simple testing without system accounts, use DummyAuthenticator:
-# c.JupyterHub.authenticator_class = 'jupyterhub.auth.DummyAuthenticator'
-# c.DummyAuthenticator.password = "password"
+c.JupyterHub.authenticator_class = 'jupyterhub.auth.DummyAuthenticator'
+c.DummyAuthenticator.password = "password"
 
 # Allow all authenticated users to access the hub
 c.Authenticator.allow_all = True
