@@ -32,7 +32,8 @@ c.JupyterHub.port = 8000
 c.JupyterHub.spawner_class = 'jupyterhub.spawner.SimpleLocalProcessSpawner'
 
 # The command used for starting the single-user server
-c.Spawner.cmd = ['jupyterhub-singleuser']
+# --allow-root is needed when running in containers as root user
+c.Spawner.cmd = ['jupyterhub-singleuser', '--allow-root']
 
 # Default URL to redirect users to after login
 c.Spawner.default_url = '/lab'
