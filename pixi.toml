@@ -1,0 +1,18 @@
+[workspace]
+name = "jupyter-pixi"
+version = "0.1.0"
+description = "JupyterHub server managed with pixi"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "linux-64", "linux-aarch64"]
+
+[tasks]
+hub = "jupyterhub -f jupyterhub_config.py"
+hub-dev = "jupyterhub -f jupyterhub_config.py --debug"
+generate-config = "jupyterhub --generate-config"
+
+[dependencies]
+jupyterhub = ">=5.0"
+jupyterlab = ">=4.0"
+notebook = ">=7.0"
+python = ">=3.11"
+
