@@ -15,4 +15,5 @@ jupyterhub = ">=5.0"
 jupyterlab = ">=4.0"
 notebook = ">=7.0"
 python = ">=3.11"
+pip = "*"
 
