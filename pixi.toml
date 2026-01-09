@@ -6,6 +6,7 @@ channels = ["conda-forge"]
 platforms = ["osx-arm64", "osx-64", "linux-64", "linux-aarch64"]
 
 [tasks]
+init = "echo hello"
 hub = "jupyterhub -f jupyterhub_config.py"
 hub-dev = "jupyterhub -f jupyterhub_config.py --debug"
 generate-config = "jupyterhub --generate-config"
